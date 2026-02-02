@@ -1,0 +1,43 @@
+#scrivere una funzione generatrice a scelta tra:
+#genereatore di numeri primi
+#generatore di numeri della sequenza fi fibonacci
+#
+#entrambe le funzioni accettano un parametro intero che indica il numero di partenza dei valori generati
+#
+#es.
+#genera_primi(10)--> 11, 13, 17, 19, ...
+#genera_fibonacci(10)--> 55, 89, 144, 233, ...
+#
+#chiedere all'utente sia da quale  numero partire la generazione 
+#sia quanti numeri generare
+#questo valore non dovrà essere passato alla funzione generatrice
+
+
+def n_primo(n):
+
+    if n < 2:
+       return False
+    
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+        
+    return True
+
+def generator(start):
+    n = start + 1
+    while True :
+        if n_primo(n):
+            yield n
+        n+= 1
+
+def main():
+    numero=int(input("Da che numero vuoi partire: "))
+    quanti = int(input("Quanti numeri vuoi generare: "))
+
+    gen = generator(numero)
+
+    for _ in range(quanti):
+        print(next(gen))
+
+main()

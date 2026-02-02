@@ -1,30 +1,50 @@
-from datetime import date
-from registro_elettronico.studente import Studente 
-
 def main():
-
-
-    nome = input("Inserisci il tuo nome: ")
-    cognome = input("Inserisci il tuo cognome: ")
-    studente1 = Studente(nome,cognome)
-    studente1.data_nascita = date(1990,1,1)
-    
-    print(f"{nome}\t{cognome} : {studente1.calcola_eta()}")
    
-    nome = input("Inserisci il tuo nome: ")
-    cognome = input("Inserisci il tuo cognome: ")
-    studente2 = Studente()
-    studente2.data_nascita = date(2000,1,12)
+   # Array --> lista
 
-    print(f"{nome}\t{cognome} : {studente2.calcola_eta()}")
+    lista = [1,1,2,2,3,3,4,4]
+    lista[0] = 5 
 
-    nome = input("Inserisci il tuo nome: ")
-    cognome = input("Inserisci il tuo cognome: ")
-    studente3 = Studente()
-    studente3.data_nascita = date(2010,1,13)
+   # print(lista[3])
 
-    print(f"{nome}\t{cognome}: {studente3.calcola_eta()}")
+    lista.append(6)#aggiunge il 6 in fondo
+    lista.insert(3,7)#aggiunge il 7 in posizione 3
 
+    print (lista[2:4])
+    
+    print (lista[:-1])
 
-if __name__ == "__main__":
-    main()
+    print(lista)
+    
+    ultimo = lista.pop()#toglie l'ultimo elemento
+
+    len(lista)
+
+    lista.count(1)#return di quante volte è presente in numero nelle parentesi
+
+    tupla = (1,1,2,2,3,3,4,4) #elementi immutabili e definiti dall'inzio
+
+    tupla2 = tuple(lista)
+
+    print(tupla)
+
+    _set = {1,1,2,2,3,3,4,4}# gli elementi non si possono ripetere 
+
+    print(_set)
+
+    set1 = set(lista)
+
+    print(lista.sort())#ordina
+
+    mistero = {
+        'prova': 1,
+        'valore': 2,
+        'chiave': 3
+    }#dizionario con stringhe 
+
+    mistero['chiave']#visualizzazione del valore del dizionario
+    mistero['mia_chiave']= 101 #creo la chiave e gli assegno un valore 
+
+    
+
+main()
